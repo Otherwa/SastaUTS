@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import BookingOptions.ORBookingFragment;
-import BookingOptions.PageAdapterClass;
+import Pages.PageAdapter;
 import BookingOptions.TicketJourneyFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager2 viewPager = findViewById(R.id.view_pager);
 
         // frag pages adapter
-        PageAdapterClass adapter = new PageAdapterClass(MainActivity.this);
+        PageAdapter adapter = new PageAdapter(MainActivity.this);
 
         viewPager.setAdapter(adapter);
 
