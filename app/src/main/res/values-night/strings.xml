@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navbar at home   -->
+    <string name="Ticket_Journey">Ticket_Journey</string>
+    <string name="OR_Booking">OR_Booking</string>
+    <string name="Quick_Booking">Quick_Booking</string>
+    <string name="Platform_Ticket">Platform_Ticket</string>
+    <string name="Season_Ticket">Season_Ticket</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="uts">UTS</string>
+    <string name="ir_unreserved_ticketing">IR Unreserved Ticketing</string>
+</resources>

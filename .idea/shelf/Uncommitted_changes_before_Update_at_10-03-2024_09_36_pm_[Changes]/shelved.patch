@@ -1,0 +1,60 @@
+Index: app/src/main/java/BookingOptions/PageAdapterClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/BookingOptions/PageAdapterClass.java b/app/src/main/java/BookingOptions/PageAdapterClass.java
+new file mode 100644
+--- /dev/null	(date 1710086655347)
++++ b/app/src/main/java/BookingOptions/PageAdapterClass.java	(date 1710086655347)
+@@ -0,0 +1,50 @@
++package BookingOptions;
++
++import android.content.Context;
++import androidx.annotation.NonNull;
++import androidx.fragment.app.Fragment;
++import androidx.fragment.app.FragmentActivity;
++import androidx.viewpager2.adapter.FragmentStateAdapter;
++import com.example.sastauts.R; // Adjust the import based on your package structure
++
++
++
++public class PageAdapterClass extends FragmentStateAdapter {
++    private final Context context;
++
++    public PageAdapterClass(FragmentActivity fragmentActivity) {
++        super(fragmentActivity);
++        this.context = fragmentActivity;
++    }
++
++    @NonNull
++    @Override
++    public Fragment createFragment(int position) {
++        // Return the fragment for each position
++        switch (position) {
++            case 0:
++                return new TicketJourneyFragment();
++            case 1:
++                return new ORBookingFragment();
++            default:
++                return null;
++        }
++    }
++
++    @Override
++    public int getItemCount() {
++        return 2;
++    }
++
++    public String getTabTitle(int position) {
++
++        switch (position) {
++            case 0:
++                return context.getString(R.string.Ticket_Journey);
++            case 1:
++                return context.getString(R.string.OR_Booking);
++            default:
++                return null;
++        }
++    }
++}
