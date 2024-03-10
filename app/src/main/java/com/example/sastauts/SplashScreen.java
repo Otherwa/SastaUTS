@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class SplashScreen extends AppCompatActivity {
 
     // Splash screen timer
-    private static final int SPLASH_TIME_OUT = 3000; // 3 seconds
+    private static final int SPLASH_TIME_OUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,6 +1,9 @@
 package com.example.sastauts;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         ViewPager2 viewPager = findViewById(R.id.view_pager);
 
+        Button helpButton = findViewById(R.id.help);
+
         // frag pages adapter
         PageAdapter adapter = new PageAdapter(MainActivity.this);
 
@@ -31,5 +36,9 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> tab.setText(adapter.getTabTitle(position))
         ).attach();
+
+        helpButton.setOnClickListener(v->{
+            Toast.makeText(MainActivity.this,"HELP",Toast.LENGTH_LONG).show();
+        });
     }
 }

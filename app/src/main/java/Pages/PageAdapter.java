@@ -10,7 +10,7 @@ import BookingOptions.TicketJourneyFragment;
 
 public class PageAdapter extends FragmentStateAdapter {
 
-    private static final int NUM_PAGES = 2; // Assuming you have two pages
+    private static final int NUM_PAGES = 2;
 
     public PageAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
