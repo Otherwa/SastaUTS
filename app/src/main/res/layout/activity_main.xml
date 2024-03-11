@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
 
+        android:paddingTop="46sp"
         android:theme="@style/Base.Theme.SastaUTS">
 
 
@@ -18,14 +19,16 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/primary"
+            android:background="@drawable/uts_nav_gradient"
+            android:padding="10sp"
             android:visibility="visible"
             app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@mipmap/ic_launcher_foreground"
             tools:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
