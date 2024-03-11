@@ -1,14 +1,20 @@
 package com.example.sastauts;
 
+import static asseter.StatusBarUtils.setStatusBarColorAndIcons;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import Auth.LoginActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -20,16 +26,16 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        // Wait for SPLASH_TIME_OUT milliseconds and then start the MainActivity
+        setStatusBarColorAndIcons(getWindow(),SplashScreen.this);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Start MainActivity
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(intent);
-                // Close SplashActivity
                 finish();
             }
         }, SPLASH_TIME_OUT);
     }
+
 }

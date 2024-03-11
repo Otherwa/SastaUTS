@@ -1,5 +1,7 @@
 package com.example.sastauts;
 
+import static asseter.StatusBarUtils.setStatusBarColorAndIcons;
+
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -22,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         ViewPager2 viewPager = findViewById(R.id.view_pager);
 
         FloatingActionButton helpButton = findViewById(R.id.help);
+
+
+        //set notibar color
+        setStatusBarColorAndIcons(getWindow(),MainActivity.this);
 
         // frag pages adapter
         PageAdapter adapter = new PageAdapter(MainActivity.this);
@@ -42,4 +49,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"HELP",Toast.LENGTH_LONG).show();
         });
     }
+
 }
