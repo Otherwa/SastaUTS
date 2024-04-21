@@ -13,11 +13,13 @@
         android:theme="@style/Theme.SastaUTS"
         tools:targetApi="31">
         <activity
+            android:name="Auth.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name="Auth.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.SastaUTS" />
-
         <activity
             android:name=".SplashScreen"
             android:exported="true">

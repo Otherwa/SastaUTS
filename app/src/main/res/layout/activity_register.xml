@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="@color/white"
-    tools:context="Auth.LoginActivity">
+    tools:context="Auth.RegisterActivity">
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="346dp"
-        android:layout_height="251dp"
+        android:layout_width="344dp"
+        android:layout_height="311dp"
         android:background="@color/white"
         android:orientation="vertical"
         android:padding="16dp"
@@ -22,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.619"
-        tools:context=".LoginActivity">
+        tools:context=".RegisterActivity">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTextInputLayout"
@@ -76,12 +77,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primary"
-            android:text="Login"
+            android:text="Register"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
@@ -101,41 +102,17 @@
         app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/loginText"
+        android:id="@+id/RegisterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@android:color/black"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.418" />
-
-    <TextView
-        android:id="@+id/orTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="21dp"
-        android:text="Or"
-        app:layout_constraintBottom_toTopOf="@+id/getRegisterdBtn"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="198dp" />
-
-    <Button
-        android:id="@+id/getRegisterdBtn"
-        android:layout_width="310dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/primary"
-        android:text="Sign up"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintVertical_bias="0.388" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

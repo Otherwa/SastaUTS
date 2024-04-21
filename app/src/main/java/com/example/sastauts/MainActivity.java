@@ -3,21 +3,13 @@ package com.example.sastauts;
 import static asseter.StatusBarUtils.setStatusBarColorAndIcons;
 
 import android.os.Bundle;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import BookingOptions.ORBookingFragment;
+
 import Pages.PageAdapter;
-import BookingOptions.TicketJourneyFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         ViewPager2 viewPager = findViewById(R.id.view_pager);
 
-        FloatingActionButton helpButton = findViewById(R.id.help);
 
 
         //set notibar color
@@ -45,9 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 (tab, position) -> tab.setText(adapter.getTabTitle(position))
         ).attach();
 
-        helpButton.setOnClickListener(v->{
-            Toast.makeText(MainActivity.this,"HELP",Toast.LENGTH_LONG).show();
-        });
     }
 
 }
