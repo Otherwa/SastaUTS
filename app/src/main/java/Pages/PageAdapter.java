@@ -16,6 +16,7 @@ public class PageAdapter extends FragmentStateAdapter {
         super(fragmentActivity);
     }
 
+
     @NonNull
     @Override
     public Fragment createFragment(int position) {
