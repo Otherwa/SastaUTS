@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.sastauts.R;
@@ -23,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +39,11 @@ public class ORBookingFragment extends Fragment {
 
 
 
-    private static final String API_URL = "https://irctc1.p.rapidapi.com/api/v1/searchTrain?query=190";
+    private static final String BASE_URL = "https://irctc1.p.rapidapi.com/api/v1/searchTrain";
     private RecyclerView recyclerView;
     private TrainsAdapter adapter;
+    private List<String> originalData; // Store the original data
+    private SearchView searchView;
 
     @Nullable
     @Override
@@ -47,22 +52,23 @@ public class ORBookingFragment extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        searchView = rootView.findViewById(R.id.searchView);
 
         // Fetch data from API
-        new FetchDataFromApiTask().execute();
-
+        fetchDataFromApi("101");
         return rootView;
     }
 
-    private class FetchDataFromApiTask extends AsyncTask<Void, Void, String> {
+    private class FetchDataFromApiTask extends AsyncTask<String, Void, List<String>> {
 
         @Override
-        protected String doInBackground(Void... voids) {
+        protected List<String> doInBackground(String... queries) {
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
             try {
-                // Create URL object
-                URL url = new URL(API_URL);
+                // Construct URL with query parameter
+                String queryParam = URLEncoder.encode(queries[0], "UTF-8");
+                URL url = new URL(BASE_URL + "?query=" + queryParam);
 
                 // Create HttpURLConnection
                 urlConnection = (HttpURLConnection) url.openConnection();
@@ -82,7 +88,11 @@ public class ORBookingFragment extends Fragment {
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
                 }
-                return response.toString();
+
+                // Parse response (dummy implementation, replace with actual parsing logic)
+                List<String> data = parseResponse(response.toString());
+                originalData = new ArrayList<>(data); // Store original data
+                return data;
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;
@@ -102,14 +112,15 @@ public class ORBookingFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(String result) {
+        protected void onPostExecute(List<String> result) {
             // Handle the API response here
             if (result != null) {
                 // Process the response data
-                // For example, update RecyclerView with fetched data
-                List<String> data = parseResponse(result); // Dummy method, implement parsing according to your API response
-                adapter = new TrainsAdapter(data);
+                adapter = new TrainsAdapter(result);
                 recyclerView.setAdapter(adapter);
+
+                // Setup search functionality
+                setupSearchView();
             } else {
                 // Handle error or display message to the user
                 Toast.makeText(getContext(), "Failed to fetch data from API", Toast.LENGTH_SHORT).show();
@@ -123,5 +134,26 @@ public class ORBookingFragment extends Fragment {
             data.add(response); // Add response as a dummy data
             return data;
         }
+    }
+
+    private void setupSearchView() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                fetchDataFromApi(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Do nothing on text change
+                return false;
+            }
+        });
+    }
+
+    private void fetchDataFromApi(String query) {
+        // Fetch data from API with the provided query
+        new FetchDataFromApiTask().execute(query);
     }
 }
