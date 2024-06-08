@@ -1,4 +1,3 @@
-<!-- card_item_layout.xml -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,14 +5,86 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp">
 
-    <!-- Your card content here -->
-    <TextView
-        android:id="@+id/itemTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Item"
-        android:padding="16dp"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"/>
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/trainNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Train Name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/trainNumberTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Train Number"
+                android:textSize="16sp"
+                android:paddingEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/fromTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="From"
+                android:textSize="14sp"
+                android:paddingEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/toTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/arriveTimeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Arrive Time"
+                android:textSize="14sp"
+                android:paddingEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/departTimeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Depart Time"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addToDatabaseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Database"
+            android:layout_gravity="end"
+             />
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

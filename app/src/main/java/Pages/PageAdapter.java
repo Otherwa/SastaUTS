@@ -6,13 +6,14 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import Options.ORBookingFragment;
+import Options.SavedTrains;
 import Options.SettingsFragment;
 import Options.TicketJourneyFragment;
 
 public class PageAdapter extends FragmentStateAdapter {
 
 
-    private static final int NUM_PAGES = 3;
+    private static final int NUM_PAGES = 4;
     private String mDataForSettings;
 
     public PageAdapter(@NonNull FragmentActivity fragmentActivity) {
@@ -29,6 +30,9 @@ public class PageAdapter extends FragmentStateAdapter {
             case 1:
                 return new TicketJourneyFragment();
             case 2:
+                // Pass data to SettingsFragment
+                return new SavedTrains();
+            case 3:
                 // Pass data to SettingsFragment
                 return new SettingsFragment();
             default:
@@ -50,6 +54,8 @@ public class PageAdapter extends FragmentStateAdapter {
             case 1:
                 return "Ticket Journey"; // Tab title for TicketJourneyFragment
             case 2:
+                return "Saved Trains";
+            case 3:
                 return "Settings"; // Tab title for SettingsFragment
             default:
                 return null;
