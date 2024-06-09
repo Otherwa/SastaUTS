@@ -121,9 +121,10 @@
         android:layout_marginBottom="21dp"
         android:text="Or"
         app:layout_constraintBottom_toTopOf="@+id/getRegisterdBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="198dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/getRegisterdBtn"

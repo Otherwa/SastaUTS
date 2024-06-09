@@ -55,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
             String password = passwordEditText.getText().toString().trim();
 
             if(!email.isEmpty() && !password.isEmpty()) {
-                //Firebase Auth
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override

@@ -48,11 +48,8 @@ import Pages.TrainsAdapter;
  */
 public class ORBookingFragment extends Fragment {
 
-
-
     private static final String BASE_URL = "https://trains.p.rapidapi.com/";
     private RecyclerView recyclerView;
-    private List<Train> originalData; // Store the original data
     private SearchView searchView;
     private TrainsAdapter adapter;
 
@@ -137,7 +134,7 @@ public class ORBookingFragment extends Fragment {
         protected void onPostExecute(List<Train> result) {
             if (result != null && !result.isEmpty()) {
                 Log.d("FetchDataFromApiTask", "Data fetched successfully");
-                originalData = result;
+                // Store the original data
                 if (adapter == null) {
                     adapter = new TrainsAdapter(result);
                     recyclerView.setAdapter(adapter);
@@ -157,7 +154,7 @@ public class ORBookingFragment extends Fragment {
                 for (int i = 0; i < dataArray.length(); i++) {
                     JSONObject jsonObject = dataArray.getJSONObject(i);
                     Train train = new Train();
-                    train.setTrainNumber(jsonObject.getInt("train_num"));
+                    train.setTrainNumber(jsonObject.getString("train_num"));
                     train.setTrainName(jsonObject.getString("name"));
                     train.setTrainFrom(jsonObject.getString("train_from"));
                     train.setTrainTo(jsonObject.getString("train_to"));

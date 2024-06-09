@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="8dp">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,75 +17,82 @@
             android:id="@+id/trainNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
             android:text="Train Name"
-            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:paddingBottom="4dp"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="vertical
+">
 
             <TextView
                 android:id="@+id/trainNumberTextView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingEnd="8dp"
                 android:text="Train Number"
-                android:textSize="16sp"
-                android:paddingEnd="8dp"/>
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/fromTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
                 android:layout_weight="1"
+                android:paddingEnd="8dp"
                 android:text="From"
-                android:textSize="14sp"
-                android:paddingEnd="8dp"/>
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/toTextView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="To"
-                android:textSize="14sp"/>
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/arriveTimeTextView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:paddingEnd="8dp"
                 android:text="Arrive Time"
-                android:textSize="14sp"
-                android:paddingEnd="8dp"/>
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/departTimeTextView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Depart Time"
-                android:textSize="14sp"/>
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <Button
             android:id="@+id/addToDatabaseBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add to Database"
             android:layout_gravity="end"
-             />
+            android:backgroundTint="@color/primary"
+            android:text="Pin" />
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Train {
-    private int trainNumber;
+    private String trainNumber;
     private String trainName;
     private String trainFrom;
     private String trainTo;
@@ -15,11 +15,11 @@ public class Train {
 
     // Getters and setters for all fields
 
-    public int getTrainNumber() {
+    public String getTrainNumber() {
         return trainNumber;
     }
 
-    public void setTrainNumber(int trainNumber) {
+    public void setTrainNumber(String trainNumber) {
         this.trainNumber = trainNumber;
     }
 
