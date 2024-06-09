@@ -6,17 +6,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sastauts.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 import Models.Train;
-import Options.ORBookingFragment;
 import Utils.DbHelper;
 
 public class TrainsAdapter extends RecyclerView.Adapter<TrainsAdapter.ViewHolder> {
@@ -92,8 +92,9 @@ public class TrainsAdapter extends RecyclerView.Adapter<TrainsAdapter.ViewHolder
                     if (position != RecyclerView.NO_POSITION) {
                         Train selectedTrain = dataList.get(position);
                         // Pass the selected train to the addToDatabase method in the fragment
-                        DbHelper dbHelper = new DbHelper(itemView.getContext());
-                        dbHelper.addTrain(selectedTrain);
+                        DatabaseReference userReference = FirebaseDatabase.getInstance().getReference();
+                        DbHelper dbHelper = new DbHelper(userReference, itemView.getContext());
+                        dbHelper.addTrain(selectedTrain,selectedTrain.getTrainNumber());
                         Toast.makeText(itemView.getContext(), selectedTrain.toString(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(itemView.getContext(), "Train added to database", Toast.LENGTH_SHORT).show();
                     }

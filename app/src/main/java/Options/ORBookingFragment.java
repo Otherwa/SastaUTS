@@ -157,7 +157,7 @@ public class ORBookingFragment extends Fragment {
                 for (int i = 0; i < dataArray.length(); i++) {
                     JSONObject jsonObject = dataArray.getJSONObject(i);
                     Train train = new Train();
-                    train.setTrainNumber(jsonObject.getInt("train_num"));
+                    train.setTrainNumber(jsonObject.getString("train_num"));
                     train.setTrainName(jsonObject.getString("name"));
                     train.setTrainFrom(jsonObject.getString("train_from"));
                     train.setTrainTo(jsonObject.getString("train_to"));

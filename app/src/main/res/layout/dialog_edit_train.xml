@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTrainName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Train Name" />
+
+    <EditText
+        android:id="@+id/editTrainNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Train Number"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTrainFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="From" />
+
+    <EditText
+        android:id="@+id/editTrainTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="To" />
+
+    <EditText
+        android:id="@+id/editArriveTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Arrive Time" />
+
+    <EditText
+        android:id="@+id/editDepartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Depart Time" />
+</LinearLayout>

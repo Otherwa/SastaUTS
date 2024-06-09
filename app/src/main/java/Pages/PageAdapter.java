@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import Options.ORBookingFragment;
-import Options.SavedTrains;
+import Options.SavedTrainsFragment;
 import Options.SettingsFragment;
 import Options.TicketJourneyFragment;
 
@@ -31,7 +31,7 @@ public class PageAdapter extends FragmentStateAdapter {
                 return new TicketJourneyFragment();
             case 2:
                 // Pass data to SettingsFragment
-                return new SavedTrains();
+                return new SavedTrainsFragment();
             case 3:
                 // Pass data to SettingsFragment
                 return new SettingsFragment();
