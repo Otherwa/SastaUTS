@@ -60,14 +60,16 @@
 
         <Button
             android:id="@+id/editButton"
-            android:layout_width="179dp"
+            android:layout_width="178dp"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/primary"
             android:text="Edit" />
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="199dp"
+            android:layout_margin="1dp"
             android:backgroundTint="@color/primary"
             android:layout_height="wrap_content"
             android:text="Delete" />
